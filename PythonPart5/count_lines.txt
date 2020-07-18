@@ -1,0 +1,1 @@
+count the lines and chars in this file 

@@ -1,4 +1,4 @@
-//chapter 8 review 9 and 10 works and works :) (work on uppercase sensititvity)
+//chapter 8 review 9 and 10 works and works :) done:)
 #include <iostream>
 #include <string>
 #include <vector>
@@ -21,7 +21,7 @@ string Uppercase(string S)
         }
     }
     return(S);
-    }
+    } 
 
 bool isPalendrom(string word)
 //determines if something is a palidrome
@@ -30,7 +30,7 @@ bool isPalendrom(string word)
     if(Uppercase(word)==word){
         word = Uppercase(word);
     }
-    return word == reversed;
+    return Uppercase(word) == Uppercase(reversed);
 }
 int main()
 //calls function

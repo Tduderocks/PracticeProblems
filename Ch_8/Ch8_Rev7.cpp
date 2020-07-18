@@ -1,4 +1,4 @@
-//chapter 8 reveiw 7 & 8
+//chapter 8 reveiw 7 & 8 finish like student one
 #include <iostream>
 #include <string>
 #include <vector>
