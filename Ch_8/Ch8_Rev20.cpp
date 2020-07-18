@@ -1,4 +1,4 @@
-//chapter 8 review 20
+//chapter 8 review 20 // need to search works:) done:)
 #include <iostream>
 #include<string>
 #include <vector>
@@ -53,7 +53,7 @@ void GetStudentData(StudentType &Student)
             School.Students[School.NumStudents]=NewStudent;
             School.NumStudents ++;
         }
-        void SearchFor(SchoolType Student)
+        void SearchFor(SchoolType school)
         //search for studnent
         {
             string Lastname,FirstName;
@@ -61,12 +61,14 @@ void GetStudentData(StudentType &Student)
             cin >> Lastname;
             cout << "Enter first name: ";
             cin >> FirstName;
-            if((Lastname==Student.last) && (FirstName==Student.First)){
-                DisplayStudentData(Student);
+            for (int i = 0; i < school.NumStudents; i ++){
+                StudentType student = school.Students[i];
+                if((Lastname==student.last) && (FirstName==student.First)){
+                    DisplayStudentData(student);
+                    return;
+                }
             }
-            else {
-                cout << FirstName << " " <<Lastname << "not found";
-            }
+            cout << FirstName << " " <<Lastname << "not found";
         }
         int main()
         //call functions, do while
@@ -76,7 +78,7 @@ void GetStudentData(StudentType &Student)
             bool Quit = false;
             char Choice;
             do{
-                cout << "Press Add,Display,Quit: ";
+                cout << "Press Add,Display,Quit, Search: ";
                 Choice=getchar();
                // cout << endl;
                 switch(Choice){
@@ -88,12 +90,10 @@ void GetStudentData(StudentType &Student)
                     case 'd': DisplaySchool(School);
                             break;
                     case 'S':
-                    case 's': SearchFor(Student);
+                    case 's': SearchFor(School);
                     case 'q':
                     case 'Q': Quit = true; break;
                 }
             }while(!Quit);
             return(0);
-
-
                 }
